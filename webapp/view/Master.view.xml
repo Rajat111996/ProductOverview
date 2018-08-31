@@ -1,6 +1,6 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ProductOverview.controller.Master"
 	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Product" >
+	<Page title="Products" >
 		<subHeader>
 			<Toolbar>
 				<SearchField />
