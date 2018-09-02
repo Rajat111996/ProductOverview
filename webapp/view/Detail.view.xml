@@ -1,4 +1,20 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ProductOverview.controller.Detail"
 	xmlns:html="http://www.w3.org/1999/xhtml">
-	
+	<ObjectHeader
+		title="{detailModel>/Name}"
+		number="{
+			parts:[{path:'detailModel>/Price'},{path:'detailModel>/CurrencyCode'}],
+			type: 'sap.ui.model.type.Currency',
+			formatOptions: {showMeasure: false}
+		}"
+		numberUnit="{detailModel>/CurrencyCode}" >
+		<statuses>
+			<ObjectStatus	text="{detailModel>/Status}" state="{path: 'detailModel>/Status',	formatter: '.stateFormatter'}"/>
+		</statuses>
+		<attributes>
+			<ObjectAttribute text="{detailModel>/WeightMeasure} {detailModel>/WeightUnit}" />
+			<ObjectAttribute text="{detailModel>/Width} x {detailModel>/Depth} x {detailModel>/Height} {detailModel>/DimUnit}" />
+			<ObjectAttribute text="{detailModel>/Description}" />
+		</attributes>
+	</ObjectHeader>
 </mvc:View>

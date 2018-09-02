@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
+	"sap/ui/model/json/JSONModel",
 	"ProductOverview/model/models"
-], function(UIComponent, Device, models) {
+], function(UIComponent, Device, JSONModel, models) {
 	"use strict";
 
 	return UIComponent.extend("ProductOverview.Component", {
@@ -22,6 +23,9 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+			
+			this.setModel(new JSONModel("model/products.json"), "listModel");
+			this.setModel(new JSONModel(), "detailModel");
 			
 			// create the views based on the url/hash
 			this.getRouter().initialize();

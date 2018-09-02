@@ -77,7 +77,12 @@
 				{
 					"pattern": "",
 					"name": "Master",
-					"target": ["Master", "Detail"]
+					"target": ["Master", "detailPlaceholder"]
+				},
+				{
+					"pattern": "Detail",
+					"name": "Detail",
+					"target": ["Detail"]
 				}
 			],
 			"targets": {
@@ -85,6 +90,11 @@
 					"viewName": "ProductOverview.view.Master",
 					"viewLevel": 1,
 					"controlAggregation": "masterPages"
+				},
+				"detailPlaceholder": {
+					"viewName": "ProductOverview.view.detailPlaceholder",
+					"viewLevel": 1,
+					"controlAggregation": "detailPages"
 				},
 				"Detail": {
 					"viewName": "ProductOverview.view.Detail",

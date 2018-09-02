@@ -7,19 +7,8 @@
 			</Toolbar>
 		</subHeader>
 		<content>
-			<List binding="{/ProductCollection}" >
-				<StandardListItem
-					title="Item 1"
-					description="Description 1"
-					type="Navigation" />
-				<StandardListItem
-					title="Item 2"
-					description="Description 2"
-					type="Navigation" />
-				<StandardListItem
-					title="Item 3"
-					description="Description 3"
-					type="Navigation" />
+			<List id="oSList" mode="None" items="{path: 'listModel>/ProductCollection'}" itemPress="onItemPress">
+				<StandardListItem title="{listModel>Name}" description="{listModel>Description}" type="Navigation" tooltip="{listModel>Description}" />
 			</List>
 		</content>
 		<footer>
