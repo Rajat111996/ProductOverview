@@ -1,7 +1,9 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ProductOverview.controller.Detail"
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" controllerName="ProductOverview.controller.Detail"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<ObjectHeader
 		title="{detailModel>/Name}"
+		icon="{detailModel>/ProductPicUrl}"
+		responsive="true"
 		number="{
 			parts:[{path:'detailModel>/Price'},{path:'detailModel>/CurrencyCode'}],
 			type: 'sap.ui.model.type.Currency',
@@ -16,5 +18,46 @@
 			<ObjectAttribute text="{detailModel>/Width} x {detailModel>/Depth} x {detailModel>/Height} {detailModel>/DimUnit}" />
 			<ObjectAttribute text="{detailModel>/Description}" />
 		</attributes>
+		<headerContainer>
+			<IconTabBar
+				id="itb1"
+				expanded="false"
+				upperCase="true"
+				>
+				<items>
+					<IconTabFilter icon="sap-icon://edit" tooltip="Edit Product">
+						<VBox class="sapUiSmallMargin">
+							<f:SimpleForm id="SimpleFormDisplay354"
+								minWidth="1024"
+								maxContainerCols="2"
+								editable="true"
+								layout="ResponsiveGridLayout"
+								title="Address"
+								labelSpanL="3"
+								labelSpanM="3"
+								emptySpanL="4"
+								emptySpanM="4"
+								columnsL="1"
+								columnsM="1">
+								<f:content>
+									<Label text="Name" />
+									<Input value="{detailModel>/Name}" />
+									<Label text="Category" />
+									<Input value="{detailModel>/Category}" />
+									<Label text="Description" />
+									<Input value="{detailModel>/Description}" />
+									<Label text="Price" />
+									<Input value="{detailModel>/Price} {detailModel>/CurrencyCode}" />
+									<Label text="Status" />
+									<Input value="{detailModel>/Status}" />
+									<Label />
+									<Button text="Save" icon="sap-icon://save" width="100px" type="Emphasized" class="sapUiTinyMarginTop" />
+								</f:content>
+							</f:SimpleForm>
+						</VBox>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</headerContainer>
 	</ObjectHeader>
 </mvc:View>

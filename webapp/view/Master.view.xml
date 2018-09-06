@@ -7,16 +7,16 @@
 			</Toolbar>
 		</subHeader>
 		<content>
-			<List id="oSList" mode="None" items="{path: 'listModel>/ProductCollection'}" itemPress="onItemPress">
-				<StandardListItem title="{listModel>Name}" description="{listModel>Description}" type="Navigation" tooltip="{listModel>Description}" />
+			<List id="oSList" items="{path: 'listModel>/ProductCollection'}" itemPress="onItemPress">
+				<StandardListItem title="{listModel>Name}" description="{listModel>Description}" icon="{listModel>ProductPicUrl}" iconInset="false" type="Navigation" tooltip="{listModel>Description}" />
 			</List>
 		</content>
-		<footer>
-			<Toolbar>
-				<ToolbarSpacer/>
-				<Button text="Accept" type="Accept" />
-				<Button text="Reject" type="Reject" />
-			</Toolbar>
-		</footer>
+		<!--<footer>-->
+		<!--	<Toolbar>-->
+		<!--		<ToolbarSpacer/>-->
+		<!--		<Button text="Accept" type="Accept" />-->
+		<!--		<Button text="Reject" type="Reject" />-->
+		<!--	</Toolbar>-->
+		<!--</footer>-->
 	</Page>
 </mvc:View>
